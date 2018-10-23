@@ -1,18 +1,32 @@
-# Azure Data
+# Azure SQL DB
 
-Star Light was a family run retail business. It has a customer dataset that has been created and stored in Azure. The database holds basic information such as customers, products, and orders.
+Story
+Star Light is a family run retail business. It has a customer dataset that has been created and run on a LAN instance of SQL server. The database holds basic information such as customers, products, and orders.
 
-Star Light is recently sold to a company that runs global business. To start with, the new owner would like to make these changes:
+As the business has grown, the company has seen an increase in the cost of purchasing and managing their server environment. The company wants to reduce infrastructure costs and improve deployment and availability of their data to multiple subsystems.
 
-- To communicate with customers by emails, which is currently not supported
-- To allow customers to review their products from website
-- To store more information on their suppliers and have more than one suppliers for their products
-- To set the retail price dynamically from weekly feed of suppliers
-- To run monthly report to understand better on their customers
+Technology
+The company wishes to continue using their SQL Database as is, but do not want to manage their own servers and database instances. They have chosen Azure to host the Database as it should port easily, while offering reduced maintenance and cost-effective scalability.
 
-Furthermore, to run Star Light as a part of the new owner’s global business regime, making it adaptive promptly to the market’s fast changes. This is more urgent from a recent accident - a change was implemented on the Production instance that brought the Database down for a couple of days.
+Getting Started
+1.Clone or download this repository
+2.Open src/SoftwareCraftmanShip2018_DB.sln in Visual Studio 2017
+3.Create a Local DB called StarLight.
+4.Change DB Solution properties to be same version as local Database.
+4.Configure connection to point to your DB Instance
+3.Build the solution and run the test to ensure it works.
 
-To prevent this from happing again in the future, your challenges are:
+Goal
 
-- To set up a test environment for this solution in Azure, so that change can be made and tested before affecting the production solution
-- To deploy the change in a reliable and repeatable approach, so that it is easy to be replicated across the new owner’s global business
+Build a CI/CD pipeline that will build, test and deploy the DB in a safe and repeatable way. 
+The pipleline should:
+•Be triggered by source control
+•Execute all included unit tests
+•Publish to a UAT environment
+•Once the UAT Sign off is received release changes to Production Environment
+
+Change Scenario
+
+As part of this work one (1) development change has been identified that needs to be delivered with this work:
+1. Customer must be amended to hold email address. 
+
