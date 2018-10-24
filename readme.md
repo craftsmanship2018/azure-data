@@ -1,4 +1,4 @@
-# Azure SQL DB
+# Azure SQL Database
 
 ## Story
 
@@ -12,25 +12,22 @@ The company wishes to continue using their SQL Database as is, but do not want t
 
 ## Getting Started
 
-1. Clone or download this repository
-1. Open src/SoftwareCraftmanShip2018_DB.sln in Visual Studio 2017
-1. Create a Local DB called StarLight.
-1. Change DB Solution properties to be same version as local Database.
-1. Configure connection to point to your DB Instance(Properties -- Debug)
-1. Change App.congig in unit test to point at your DB instance
-1. Build the solution and run the test to ensure it works.
+1. Fork and clone this repository
+1. Open `src\SoftwareCraftmanShip2018_DB.sln` in Visual Studio 2017
+1. Create a local SQL Server database named StarLight
+1. Change project properties to be same version as local database
+1. Configure connection to point to your database instance via `Properties` > `Debug`
+1. Modify App.config in the unit test project to point at your database instance
+1. Build the solution, and run the test to ensure it works
 
 ## Goal
 
-Build a CI/CD pipeline that will build, test and deploy the DB in a safe and repeatable way. The pipleline should:
+Build a CI/CD pipeline that will build, test and deploy database changes in a safe and repeatable way. The pipeline should:
 
-- Be triggered by source control
 - Execute all included unit tests
 - Publish to a UAT environment
-- Once the UAT Sign off is received release changes to Production Environment
+- Once UAT sign-off has been provided, release changes to a production environment
 
 ## Change Scenario
 
-As part of this work one (1) development change has been identified that needs to be delivered with this work:
-
-1. Customer must be amended to hold email address.
+To test the pipeline, a simple change should be committed to the application's repository. You could, for example, amend the customer record to hold email address.
